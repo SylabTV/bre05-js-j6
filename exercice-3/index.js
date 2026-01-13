@@ -1,13 +1,22 @@
-let inputtext = document.querySelector("#inputText");
-let select = document.querySelector("#slc");
-let textarea = document.querySelector("#txtarea");
+let password = document.querySelector("#password");
+let confirmPassword = document.querySelector("#confirm_password");
+let form = document.querySelector("#signup-form");
 
-inputtext.addEventListener("input", event => {
-  console.log(event.target.value);
-});
-select.addEventListener("change", event => {
-  console.log(event.target.value);
-});
-textarea.addEventListener("input", event => {
-  console.log(event.target.value);
+form.addEventListener("submit", function(e) {
+  if (password.value !== confirmPassword.value) {
+    e.preventDefault();
+    password.classList.add("invalid");
+    confirmPassword.classList.add("invalid");
+
+    password.classList.remove("valid");
+    confirmPassword.classList.remove("valid");
+    console.log("Les mots de passe ne correspondent pas.");
+  } else {
+    password.classList.add("valid");
+    confirmPassword.classList.add("valid");
+    
+    password.classList.remove("invalid");
+    confirmPassword.classList.remove("invalid");
+    console.log("Formulaire soumis avec succès !");
+  }
 });
