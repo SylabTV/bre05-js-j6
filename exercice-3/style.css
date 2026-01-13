@@ -10,7 +10,7 @@ fieldset {
     background: linear-gradient(to right, #547cff, #02eeff);
     border-radius: 0.5em;
 }
-input,select,textarea{
+input,button{
     border-radius: 0.5em;
     border: none;
     padding: 0.2rem;
